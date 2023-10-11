@@ -1,10 +1,13 @@
 import './App.css';
-
+import AuthContext from './context/auth-context';
 function App() {
   return (
-    <div className="App">
-      <h1>Hello word </h1>
-    </div>
+    <AuthContext.Provider value={{isLoggedIn: false}}>
+      <div className="App">
+        <h1>Hi there!</h1>
+      </div>
+    </AuthContext.Provider>
+    
   );
 }
 
