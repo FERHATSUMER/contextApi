@@ -1,13 +1,22 @@
 import './App.css';
+import Auth from './Auth';
 import AuthContext from './context/auth-context';
+import { useState } from 'react';
+
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loginAuth = () => {
+    console.log("loginAuth")
+    setIsLoggedIn(true);
+  }
+
   return (
-    <AuthContext.Provider value={{isLoggedIn: false}}>
+    <AuthContext.Provider value={{ isLoggedIn, onLogin: loginAuth }}>
       <div className="App">
-        <h1>Hi there!</h1>
+        <Auth />
       </div>
     </AuthContext.Provider>
-    
   );
 }
 
